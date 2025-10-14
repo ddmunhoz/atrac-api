@@ -1,0 +1,16 @@
+.common:
+  tags:
+    - &RUNNER nars
+
+stages:
+    - build
+
+build_job:
+  stage: build
+  script:
+    - whoami
+    - id
+    - docker build --tag atrac_api:1.0 .
+
+  tags:
+    - *RUNNER
